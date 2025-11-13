@@ -8,7 +8,7 @@ start_station_id   AS station_id,
 start_station_name AS station_name,
 start_lat          AS station_lat,
 start_lng          AS station_lng
-from {{ source('demo', 'bike') }}
+from {{ ref('stg_bike') }}
 where ride_id != 'ride_id'
 )
 select
